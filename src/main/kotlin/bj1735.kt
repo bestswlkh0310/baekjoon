@@ -27,7 +27,7 @@ fun main() {
 
     println("$aa11 $a111")
 }
-fun gcd(a: Int, b:Int): Int {
+private fun gcd(a: Int, b:Int): Int {
     if (a == 1 || b == 1) {
         return 1
     }
