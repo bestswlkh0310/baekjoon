@@ -1,11 +1,11 @@
 fun main() {
     val n = readln().toInt()
     for (k in 0 until n) {
-        var (a, b) = readln().split(" ").map { it.toInt() }
+        //var (a, b) = readln().split(" ").map { it.toInt() }
         println("yes")
   /*      var sum = 0
 
-*//*        loop@
+        loop@
         for (i in 1 .. a / 2) {
             for (j in 3 .. a / 2 + 3 step 2) {
                 if (a == 1) break@loop
