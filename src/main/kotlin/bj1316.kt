@@ -12,8 +12,7 @@ fun main() {
                 try {
                     if (str[i] == str[i + 1])
                         str = str.removeRange(i, i + 1)
-                } catch (e: Exception) {
-                }
+                } catch (e: Exception) {  }
             }
         }
         var sum = 0
