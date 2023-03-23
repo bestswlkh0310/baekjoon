@@ -1,5 +1,5 @@
-var sum0 = 0
-var sum1 = 0
+private var sum0 = 0
+private var sum1 = 0
 
 fun main() {
     val n = readln().toInt()
@@ -16,7 +16,7 @@ fun main() {
 }
 var arr: MutableList<MutableList<Int>> = Array (2) { Array(40) { 0 }.toMutableList() }.toMutableList()
 
-fun fb(n: Int): Int {
+private fun fb(n: Int): Int {
     if (n == 0) {
         sum0++
         return 0

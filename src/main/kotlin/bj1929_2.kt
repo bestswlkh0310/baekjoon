@@ -4,6 +4,7 @@ fun main() {
     val br = System.`in`.bufferedReader()
     val bw = System.out.bufferedWriter()
     val (a, b) = br.readLine().split(" ").map { it.toInt() }
+
     val isPrime = BooleanArray(b + 1) { true }
     val primes = mutableListOf<Int>()
 
