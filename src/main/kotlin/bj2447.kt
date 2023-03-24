@@ -3,8 +3,13 @@ fun main() {
     val bw = System.out.bufferedWriter()
     var sb = StringBuilder()
     val n = br.readLine().toInt()
+    val init = System.currentTimeMillis()
+/*    var aa = ArrayDeque<Char>()
+    aa.addAll(List(n) { '*' })
+    val arr: ArrayDeque<ArrayDeque<Char>> = ArrayDeque()
+    arr.addAll(List(n) { aa })*/
 
-    var arr: MutableList<MutableList<Char>> = Array (n) { Array (n) { '*' }.toMutableList() }.toMutableList()
+    var arr = Array(n) { ArrayDeque(List(n) { '*' }) }
     roll(arr, 0, 0, n)
     for (i in 0 until n) {
         for (j in 0 until n) {
@@ -12,12 +17,13 @@ fun main() {
         }
         sb.append("\n")
     }
-    bw.write("$sb")
+    bw.write("$sb\n")
+//    bw.write("${System.currentTimeMillis() - init} ms")
     bw.flush()
     bw.close()
 }
 
-fun roll (arr: MutableList<MutableList<Char>>, x: Int, y: Int, width: Int) {
+fun roll (arr: Array<ArrayDeque<Char>>, x: Int, y: Int, width: Int) {
     if (width == 1 / 3) return
     for (i in width / 3 until width / 3 * 2) {
         for (j in width / 3 until width / 3 * 2) {
