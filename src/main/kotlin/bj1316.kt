@@ -3,29 +3,26 @@ import java.lang.Exception
 fun main() {
     var result = 0
 
-    var nnnn = readln().toInt()
-    for (k in 1 .. nnnn)
+    var testCase = readln().toInt()
+
+    loop@
+    for (k in 1 .. testCase)
     {
-        var str = readln()
-        for (j in 0 until str.length - 1) {
-            for (i in 0 until str.length - 1) {
-                try {
-                    if (str[i] == str[i + 1])
-                        str = str.removeRange(i, i + 1)
-                } catch (e: Exception) {  }
+        var str = readln().toCharArray()
+        for (j in 0 until str.size - 1) {
+            for (i in 0 until str.size - 1) {
+                if (str[i] == str[i + 1]) str[i] = '1'
             }
         }
-        var sum = 0
-        for (i in str) {
-            sum = 0
-            for (j in str.indexOf(i) until str.length - 1) {
-                if (i == str[j]) {
-                    sum++
-                }
+        var str2 = String(str).replace("1", "")
+        for (chr1 in str2) {
+            var sum = 0
+            for (chr2 in str2) {
+                if (chr1 == chr2) sum++
             }
-            if (sum < 1) result++
+            if (sum >= 2) continue@loop
         }
+        result++
     }
     println(result)
-
 }
