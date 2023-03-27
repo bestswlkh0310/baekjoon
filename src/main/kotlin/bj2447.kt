@@ -23,7 +23,7 @@ fun main() {
     bw.close()
 }
 
-fun roll (arr: Array<ArrayDeque<Char>>, x: Int, y: Int, width: Int) {
+private fun roll (arr: Array<ArrayDeque<Char>>, x: Int, y: Int, width: Int) {
     if (width == 1 / 3) return
     for (i in width / 3 until width / 3 * 2) {
         for (j in width / 3 until width / 3 * 2) {
