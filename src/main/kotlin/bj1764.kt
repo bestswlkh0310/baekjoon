@@ -1,24 +1,21 @@
 import java.lang.StringBuilder
 
 fun main() {
+    val br = System.`in`.bufferedReader()
+    val bw = System.out.bufferedWriter()
     val sb = StringBuilder()
-    val (a, b) = readln().split(" ").map { it.toInt() }
-    var arr1 = arrayListOf<String>()
-    var arr2 = arrayListOf<String>()
-    for (i in 0 until a) {
-        arr1.add(readln())
-    }
-    for (i in 0 until b) {
-        arr2.add(readln())
-    }
-    var sum = 0
-    for (i in 0 until b) {
-        val t = arr1.filter { it == arr2[i] }
-        if (t.isNotEmpty()) {
-            sb.append("${t[0]}\n")
-            sum++
-        }
-    }
-    println(sum)
-    println(sb)
+
+    val (a, b) = br.readLine().split(" ").map { it.toInt() }
+    var arr1 = mutableSetOf<String>()
+    var arr2 = mutableSetOf<String>()
+    repeat(a) {arr1.add(br.readLine())}
+    repeat(b) {arr2.add(br.readLine())}
+
+    val arr3 = arr2.intersect(arr1).toMutableList().sorted()
+
+    bw.write("${arr3.size}\n")
+    for (i in arr3) { sb.append("$i\n") }
+    bw.write("$sb")
+    bw.flush()
+    bw.close()
 }
