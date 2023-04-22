@@ -4,6 +4,11 @@ fun main() {
         'J','K','L','M','N','O','P','Q','R',
         'S','T','U','V','W','X','Y','Z')
 
-    val (a, n) = readln().split(" ").map { it.toInt() }
-
+    var str = arrayListOf<Char>()
+    var (a, n) = readln().split(" ").map { it.toInt() }
+    while (a != 0) {
+        str.add(arr[a % n])
+        a /= n
+    }
+    println(str.reversed().joinToString(""))
 }

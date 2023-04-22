@@ -1,13 +1,7 @@
 fun main() {
-    val n = readln().toInt()
-    repeat(n - 1) { print(" ")}
-    println("*")
-    for (i in 0 until n - 1) {
-        for (j in i until n - 2)
-            print(" ")
-        print("*")
-        for (j in 0 until i)
-            print(" *")
-        println(" *")
-    }
+    val a = arrayListOf<String>(
+        "sad",
+        "qwe"
+    )
+    println(a[0][1])
 }
