@@ -1,6 +1,7 @@
 fun main() {
     val bg = arrayListOf<Int>()
     val side = arrayListOf<Int>()
+    val dd = arrayListOf<Int>()
     repeat(3) {
         bg.add(readln().toInt())
     }
