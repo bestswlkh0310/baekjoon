@@ -4,7 +4,7 @@ fun main() {
     arr.add(97.0)
     arr.add(70.0)
     arr.add(100.0)
-    arr.add(95.4)
+    arr.add(95.6)
     arr.add(95.5)
     for (i in arr.indices) {
         println("${subject[i]} : ${arr[i]}")
